@@ -46,7 +46,7 @@ npm install
 npm run dev
 ```
 
-Backend runs at **http://localhost:3000**.  
+Backend runs at **https://revision-1.vercel.app/api/tasks**.  
 APIs: `GET /api/tasks`, `POST /api/tasks`, `PUT /api/tasks/:id`.
 
 ### 3. Frontend
@@ -59,17 +59,17 @@ npm install
 npm run dev
 ```
 
-Frontend runs at **http://localhost:5173** (or the port Vite shows).
+Frontend runs at **https://chipper-queijadas-34b5b7.netlify.app/** (or the port Vite shows).
 
-- By default it uses **http://localhost:3000** for the API.
+- By default it uses **https://revision-1.vercel.app/api/tasks** for the API.
 - For a different backend URL, create **`.env`** in `frontend` with:
   ```
-  VITE_API_URL=http://localhost:3000/api
+  VITE_API_URL=https://revision-1.vercel.app/api/tasks
   ```
 
 ### 4. Use the app
 
-Open **http://localhost:5173** in the browser. Add tasks (title + optional description), view the list, and mark tasks as completed.
+Open **https://chipper-queijadas-34b5b7.netlify.app/** in the browser. Add tasks (title + optional description), view the list, and mark tasks as completed.
 
 ---
 
@@ -98,7 +98,7 @@ Open **http://localhost:5173** in the browser. Add tasks (title + optional descr
 
 Example:
 
-- **Frontend:**  
-- **Backend:**  
+- **Frontend:*https://chipper-queijadas-34b5b7.netlify.app/*  
+- **Backend:*https://revision-1.vercel.app/api/tasks*  
 
 Ensure the deployed frontend’s `VITE_API_URL` points to your deployed backend (e.g. `/api`).
