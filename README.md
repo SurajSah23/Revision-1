@@ -77,8 +77,7 @@ Open **https://chipper-queijadas-34b5b7.netlify.app/** in the browser. Add tasks
 
 - **Supabase**: You have a Supabase project and have run `supabase-schema.sql` so the `tasks` table exists.
 - **CORS**: Backend allows all origins; for production you may want to restrict this.
-- **Auth**: No user authentication; all tasks are in one shared list.
-- **No delete**: The assessment did not require delete; only add, list, and mark completed are implemented for tasks.
+
 - **Status**: Tasks have two statuses only: **Pending** and **Completed** (no “In progress” or custom statuses).
 
 ---
