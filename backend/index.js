@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import todoRoutes from './routes/todos.js';
 import taskRoutes from './routes/tasks.js';
 
 dotenv.config();
@@ -13,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/todos', todoRoutes);
 app.use('/api/tasks', taskRoutes);
 
 // Health check endpoint
