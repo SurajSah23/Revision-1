@@ -69,3 +69,19 @@ export const updateTask = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+export const deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { error } = await supabase
+      .from(TABLE)
+      .delete()
+      .eq('id', id);
+
+    if (error) throw error;
+    res.json({ message: 'Task deleted' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

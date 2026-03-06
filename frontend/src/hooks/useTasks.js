@@ -38,5 +38,30 @@ export function useTasks() {
     }
   };
 
-  return { tasks, addTask, markCompleted, fetchTasks };
+  const updateTask = async (id, { title, description, status }) => {
+    try {
+      const body = {};
+      if (title !== undefined) body.title = title;
+      if (description !== undefined) body.description = description;
+      if (status !== undefined) body.status = status;
+      const response = await axios.put(`${API_URL}/tasks/${id}`, body);
+      setTasks((prev) => prev.map((task) => (task.id === id ? response.data : task)));
+      return response.data;
+    } catch (error) {
+      console.error('Error updating task:', error);
+      throw error;
+    }
+  };
+
+  const deleteTask = async (id) => {
+    try {
+      await axios.delete(`${API_URL}/tasks/${id}`);
+      setTasks((prev) => prev.filter((task) => task.id !== id));
+    } catch (error) {
+      console.error('Error deleting task:', error);
+      throw error;
+    }
+  };
+
+  return { tasks, addTask, markCompleted, updateTask, deleteTask, fetchTasks };
 }
